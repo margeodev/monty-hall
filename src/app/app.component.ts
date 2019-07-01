@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  jogoIniciado: boolean;
+
+  iniciaJogo(evento: any) {
+    this.jogoIniciado = evento;
+  }
 }

@@ -2,5 +2,9 @@
   <div class="titulo">
     <h1>Monty Hall</h1>
   </div>
-  <app-form-inicial></app-form-inicial>
+
+  <div *ngIf="!jogoIniciado">
+    <app-form-inicial (evento)="iniciaJogo($event)"></app-form-inicial>
+  </div>
+
 </div>

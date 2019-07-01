@@ -2,16 +2,33 @@
   <form #initialForm="ngForm" autocomplete="off">
     <div>
       <label>Número de Portas:</label>
-      <input class="enjoy-css"/>
+      <input class="enjoy-css" [value]="numeroPortas" readonly />
+      <a href="#" class="myButtonM" (click)="decrementa()">-</a>
+      <a href="#" class="myButtonP" (click)="incrementa()">+</a>
     </div>
 
-    <div>
+    <div style="margin-bottom: 20px;">
       <label>Portas Premiada:</label>
-      <input class="enjoy-css"/>
+      <input class="enjoy-css" />
+    </div>
+
+    <hr>
+    <div class="placar">
+      <h2>Placar</h2>
+      <div class="resultado" style="margin-top: 20px">
+        <label>Vitórias:</label>
+        <label>0</label>
+      </div>
+
+      <div class="resultado">
+        <label>Derrotas:</label>
+        <label>0</label>
+      </div>
+
     </div>
 
     <div class="button">
-      <a href="#" class="myButton">INICIAR</a>
+      <a href="#" class="myButton" (click)="iniciaJogo()">INICIAR</a>
     </div>
   </form>
 </div>

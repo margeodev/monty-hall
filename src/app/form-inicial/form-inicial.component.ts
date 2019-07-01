@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form-inicial',
@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormInicialComponent implements OnInit {
 
+  @Output() evento = new EventEmitter();
+  iniciado: boolean;
+  numeroPortas = 3;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  iniciaJogo() {
+    this.iniciado = true;
+    this.evento.emit(this.iniciado);
+  }
+
+  incrementa() {
+    if(this.numeroPortas < 100) {
+      this.numeroPortas++;
+    }
+  }
+
+  decrementa() {
+    if(this.numeroPortas > 3) {
+      this.numeroPortas--;
+    }
+  }
 }
