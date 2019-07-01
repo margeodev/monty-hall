@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1c91ff;
+  font-family: Lobster;
+  color:#F54E4E;
+}
+
+@media (min-width: 1171px) {
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
