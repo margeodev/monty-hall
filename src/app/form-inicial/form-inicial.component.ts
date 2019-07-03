@@ -11,25 +11,30 @@ export class FormInicialComponent implements OnInit {
   iniciado: boolean;
   numeroPortas = 3;
 
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  iniciaJogo() {
+  jogar() {
     this.iniciado = true;
-    this.evento.emit(this.iniciado);
+    const jogo = [];
+    jogo[0] = this.iniciado;
+    jogo[1] = this.numeroPortas;
+    this.evento.emit(jogo);
   }
 
   incrementa() {
-    if(this.numeroPortas < 100) {
+    if (this.numeroPortas < 100) {
       this.numeroPortas++;
     }
   }
 
   decrementa() {
-    if(this.numeroPortas > 3) {
+    if (this.numeroPortas > 3) {
       this.numeroPortas--;
     }
   }
+
 }

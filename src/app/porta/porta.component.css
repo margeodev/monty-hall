@@ -1,0 +1,33 @@
+.porta {
+  margin: 20px 0;
+}
+
+.portaSelecionada {
+  display: flex;
+  justify-content: center;
+  color: yellow;
+}
+.portaSelecionada :hover {
+  cursor: pointer;
+}
+.portaNormal {
+  display: flex;
+  justify-content: center;
+}
+.portaNormal :hover{
+  cursor: pointer;
+}
+
+.door img {
+  top: 0;
+  z-index: 0;
+}
+
+.door .number {
+  margin-left: 70px;
+}
+
+.door .number:hover {
+  cursor: pointer;
+}
+

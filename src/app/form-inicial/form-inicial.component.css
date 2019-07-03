@@ -41,6 +41,7 @@ label {
 .resultado{
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
   align-items: flex-start;
 }
 .resultado label{

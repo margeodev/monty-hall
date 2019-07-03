@@ -1,0 +1,8 @@
+<div class="porta">
+  <!--############### NÚMERO DA PORTA ###############-->
+  <div class="{{ selecionada ? 'portaSelecionada' : 'portaNormal' }}" (click)="escolhePorta()">
+    <h2>{{numeroPorta}}</h2>
+  </div>
+
+  <img [src]="imgPorta" (click)="clicada()">
+</div>

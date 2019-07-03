@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Monty Hall Game';
   jogoIniciado: boolean;
+  numeroPortas: number;
 
-  iniciaJogo(evento: any) {
-    this.jogoIniciado = evento;
+  alternaTela(evento: any) {
+    this.jogoIniciado = evento[0];
+    this.numeroPortas = evento[1];
   }
+
 }

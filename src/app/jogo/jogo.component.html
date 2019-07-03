@@ -1,0 +1,12 @@
+<div>
+  <div class="portas">
+    <div *ngFor="let porta of portas">
+      <app-porta [porta]=porta></app-porta>
+    </div>
+  </div>
+
+  <div class="button">
+    <a href="#" class="myButton" (click)="iniciaJogo()">Novo Jogo</a>
+    <a href="#" class="linkVoltar" (click)="voltaParaMenu()">Voltar</a>
+  </div>
+</div>

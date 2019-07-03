@@ -3,8 +3,12 @@
     <h1>Monty Hall</h1>
   </div>
 
-  <div *ngIf="!jogoIniciado">
-    <app-form-inicial (evento)="iniciaJogo($event)"></app-form-inicial>
+  <div [hidden]="jogoIniciado" style="border: 2px solid yellow">
+    <app-form-inicial (evento)="alternaTela($event)"></app-form-inicial>
+  </div>
+
+  <div *ngIf="jogoIniciado" style="border: 2px solid blue;">
+    <app-jogo (evento)="alternaTela($event)" [numeroPortas]="numeroPortas"></app-jogo>
   </div>
 
 </div>
