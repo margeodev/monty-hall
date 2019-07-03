@@ -9,7 +9,6 @@ form {
   background: #1269bb;
 }
 
-
 form div + div {
   margin-top: 1em;
 }
@@ -22,32 +21,6 @@ label {
   color: rgb(94, 243, 64);
   font-size: 1.2em;
   font-weight: bold;
-}
-
-.placar {
-  width: 340px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-
-.placar h2 {
-  display: flex;
-  justify-content: center;
-  color: rgb(94, 243, 64);
-}
-
-.resultado{
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  align-items: flex-start;
-}
-.resultado label{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
 }
 
 .enjoy-css {
@@ -86,14 +59,14 @@ label {
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
-	border:4px solid #18ab29;
+	border:2px solid #18ab29;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:23px;
+	font-size:15px;
 	font-weight:bold;
-	padding:12px 33px;
+	padding:7px 17px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }

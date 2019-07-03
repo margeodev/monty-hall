@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-inicial',
@@ -7,10 +7,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class FormInicialComponent implements OnInit {
 
-  @Output() evento = new EventEmitter();
+  @Output() eventoForm = new EventEmitter();
+  @Input() vitorias = 0;
+  @Input() derrotas = 0;
   iniciado: boolean;
   numeroPortas = 3;
-
 
   constructor() { }
 
@@ -22,7 +23,7 @@ export class FormInicialComponent implements OnInit {
     const jogo = [];
     jogo[0] = this.iniciado;
     jogo[1] = this.numeroPortas;
-    this.evento.emit(jogo);
+    this.eventoForm.emit(jogo);
   }
 
   incrementa() {

@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-porta',
@@ -8,9 +7,11 @@ import { TestBed } from '@angular/core/testing';
 })
 export class PortaComponent implements OnInit {
 
+  @Output() eventoPorta = new EventEmitter();
+  @Input() porta: any;
+  venceu: boolean;
   selecionada: boolean;
   aberta = false;
-  @Input() porta: any;
   imgPorta = "../../assets/images/pfn.png";
   imgGift = "../../assets/images/bode.png";
   numeroPorta: number;
@@ -37,9 +38,12 @@ export class PortaComponent implements OnInit {
     if (this.selecionada) {
       if (this.porta.premiada) {
         this.imgPorta = "../../assets/images/premioTesouro.png";
+        this.venceu = true;
       } else {
         this.imgPorta = "../../assets/images/premioBode.png";
+        this.venceu = false;
       }
+      this.eventoPorta.emit(this.venceu);
       this.aberta = true;
     }
   }

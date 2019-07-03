@@ -12,6 +12,8 @@ export class JogoComponent implements OnInit {
   @Input() numeroPortas: number;
   portaPremiada: number;
   portas = []
+  vitorias = 0;
+  derrotas = 0;
 
   constructor() { }
 
@@ -41,6 +43,14 @@ export class JogoComponent implements OnInit {
   voltaParaMenu() {
     this.iniciado = false;
     this.evento.emit(this.iniciado);
+  }
+
+  preenchePlacar(evento: any){
+    if(evento == true) {
+      this.vitorias++;
+    } else if(evento == false) {
+      this.derrotas++;
+    }
   }
 
 }

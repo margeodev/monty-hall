@@ -4,7 +4,7 @@
   </div>
 
   <div [hidden]="jogoIniciado" style="border: 2px solid yellow">
-    <app-form-inicial (evento)="alternaTela($event)"></app-form-inicial>
+    <app-form-inicial (eventoForm)="alternaTela($event)"></app-form-inicial>
   </div>
 
   <div *ngIf="jogoIniciado" style="border: 2px solid blue;">
