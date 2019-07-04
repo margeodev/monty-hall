@@ -7,12 +7,14 @@ import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter }
 })
 export class PortaComponent implements OnInit {
 
+  path = '../../assets/images/';
   @Output() eventoPorta = new EventEmitter();
+  @Output() eventoSelecionaPorta = new EventEmitter();
   @Input() porta: any;
   venceu: boolean;
-  selecionada: boolean;
   aberta = false;
   imgPorta = "../../assets/images/pfn.png";
+  imgPortaDescartavel = "../../assets/images/pd.png";
   imgGift = "../../assets/images/bode.png";
   numeroPorta: number;
   premiada: boolean;
@@ -25,17 +27,18 @@ export class PortaComponent implements OnInit {
 
   escolhePorta() {
     if(!this.aberta) {
-      this.selecionada = !this.selecionada;
-      if (this.selecionada) {
-        this.imgPorta = "../../assets/images/pfs.png";
+      this.porta.selecionada = !this.porta.selecionada;
+      if (this.porta.selecionada) {
+        this.eventoSelecionaPorta.emit(this.numeroPorta);
+        this.imgPorta = this.path + 'pfs.png';
       } else {
-        this.imgPorta = "../../assets/images/pfn.png";
+        this.imgPorta = this.path + 'pfn.png';
       }
     }
   }
 
   clicada() {
-    if (this.selecionada) {
+    if (this.porta.selecionada) {
       if (this.porta.premiada) {
         this.imgPorta = "../../assets/images/premioTesouro.png";
         this.venceu = true;
@@ -45,6 +48,8 @@ export class PortaComponent implements OnInit {
       }
       this.eventoPorta.emit(this.venceu);
       this.aberta = true;
+    } else {
+      this.exibeInstrucaoPorta();
     }
   }
 
@@ -54,8 +59,12 @@ export class PortaComponent implements OnInit {
   }
 
   reiniciaJogo() {
-    this.selecionada = false;
+    this.porta.selecionada = false;
     this.aberta = false;
   }
 
+  exibeInstrucaoPorta() {
+    const mensagem = 'Para abrir a porte é preciso selecioná-la antes clicando no número acima dela, \ndepois disso ela poderá ser aberta com um clique.'
+    alert(mensagem);
+  }
 }

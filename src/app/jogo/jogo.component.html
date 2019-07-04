@@ -6,12 +6,17 @@
 
   <div class="portas">
     <div *ngFor="let porta of portas">
-      <app-porta [porta]=porta (eventoPorta)="preenchePlacar($event)"></app-porta>
+      <app-porta
+        [porta]="porta"
+        (eventoPorta)="preenchePlacar($event)"
+        (eventoSelecionaPorta)="definePortaSelecionada($event)">
+      </app-porta>
     </div>
   </div>
 
   <div class="button">
     <a href="#" class="myButton" (click)="iniciaJogo()">Novo Jogo</a>
+    <a href="#" class="myButton" (click)="eliminarErradas()" style="margin-left: 15px">Eliminar erradas</a>
     <a href="#" class="linkVoltar" (click)="voltaParaMenu()">Voltar</a>
   </div>
 </div>

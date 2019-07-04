@@ -1,13 +1,13 @@
-<div class="container" style="border: 2px solid red">
+<div class="container">
   <div class="titulo">
-    <h1>Monty Hall</h1>
+    <h1>Monty Hall Game</h1>
   </div>
 
-  <div [hidden]="jogoIniciado" style="border: 2px solid yellow">
+  <div [hidden]="jogoIniciado">
     <app-form-inicial (eventoForm)="alternaTela($event)"></app-form-inicial>
   </div>
 
-  <div *ngIf="jogoIniciado" style="border: 2px solid blue;">
+  <div *ngIf="jogoIniciado" style="border: 1px solid rgb(68, 224, 224); padding: 20px; border-radius: 10px">
     <app-jogo (evento)="alternaTela($event)" [numeroPortas]="numeroPortas"></app-jogo>
   </div>
 

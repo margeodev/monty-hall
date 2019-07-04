@@ -1,8 +1,9 @@
 <div class="porta">
   <!--############### NÚMERO DA PORTA ###############-->
-  <div class="{{ selecionada ? 'portaSelecionada' : 'portaNormal' }}" (click)="escolhePorta()">
+  <div class="{{ porta.selecionada ? 'portaSelecionada' : 'portaNormal' }}" (click)="escolhePorta()">
     <h2>{{numeroPorta}}</h2>
   </div>
 
-  <img [src]="imgPorta" (click)="clicada()">
+  <img *ngIf="porta.descartavel" [src]="imgPortaDescartavel">
+  <img *ngIf="!porta.descartavel" [src]="imgPorta" (click)="clicada()">
 </div>
